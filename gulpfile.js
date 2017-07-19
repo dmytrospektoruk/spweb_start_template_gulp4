@@ -1,6 +1,7 @@
 global.$ = {
     path: {
-        task: require('./gulp/paths/tasks.js')
+        task: require('./gulp/paths/tasks.js'),
+        libs: require('./gulp/paths/libs.js')
     },
     gulp: require('gulp'),
     del: require('del'),
@@ -16,13 +17,13 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('dev', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles', 'pug', $.gulp.series('common-js', 'scripts'), 'svg', 'img:dev', 'fonts')));
+    $.gulp.parallel('styles:app', 'pug', $.gulp.series('common-js', 'scripts:app'), 'svg', 'img:app', 'fonts')));
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles', 'pug', $.gulp.series('common-js', 'scripts'), 'svg', 'img:build', 'fonts', function() { 
-            $.gulp.src('app/.htaccess').pipe($.gulp.dest('./build/'))
-        }) ));
+    $.gulp.parallel('styles:dist', 'pug', $.gulp.series('common-js', 'scripts:dist'), 'svg', 'img:dist', 'fonts'
+        // , function() { $.gulp.src('app/.htaccess').pipe($.gulp.dest('./dist/')) }
+        ) ));
 
 
 $.gulp.task('default', $.gulp.series(
