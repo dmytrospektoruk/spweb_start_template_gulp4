@@ -1,0 +1,13 @@
+nav.main__nav
+	ul.nav__list
+		each link,title in nav.navPages
+			li.nav__item
+				if (link == 'main.html')
+					a(href=link).nav__link.active= title
+				else
+					a(href=link).nav__link= title
+
+a(href="javaScript:void(0)").sandwich
+	span.sandwich__item
+	span.sandwich__item
+	span.sandwich__item

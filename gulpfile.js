@@ -17,11 +17,11 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('dev', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles:app', 'pug', $.gulp.series('common-js', 'scripts:app'), 'svg', 'img:app', 'fonts')));
+    $.gulp.parallel('styles:app', 'pug', $.gulp.series('common-js', 'scripts:app'), 'svg', 'img:app', 'fonts', 'php')));
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('styles:dist', 'pug', $.gulp.series('common-js', 'scripts:dist'), 'svg', 'img:dist', 'fonts'
+    $.gulp.parallel('styles:dist', 'pug', $.gulp.series('common-js', 'scripts:dist', 'clean-js'), 'svg', 'img:dist', 'fonts', 'php'
         // , function() { $.gulp.src('app/.htaccess').pipe($.gulp.dest('./dist/')) }
         ) ));
 

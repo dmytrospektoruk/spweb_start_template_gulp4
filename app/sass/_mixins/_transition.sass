@@ -1,0 +1,11 @@
+@mixin trans($props: none, $time: .25, $delay: 0, $method: ease)
+	@if length($props) == 1
+		transition: $props $time*1s $delay*1s $method
+	@if length($props) == 2
+		transition: nth($props, 1) $time*1s $delay*1s $method, nth($props, 2) $time*1s $delay*1s $method
+	@if length($props) == 3
+		transition: nth($props, 1) $time*1s $delay*1s $method, nth($props, 2) $time*1s $delay*1s $method, nth($props, 3) $time*1s $delay*1s $method
+	@if length($props) == 4
+		transition: nth($props, 1) $time*1s $delay*1s $method, nth($props, 2) $time*1s $delay*1s $method, nth($props, 3) $time*1s $delay*1s $method, nth($props, 4) $time*1s $delay*1s $method
+	@if length($props) == 5
+		transition: nth($props, 1) $time*1s $delay*1s $method, nth($props, 2) $time*1s $delay*1s $method, nth($props, 3) $time*1s $delay*1s $method, nth($props, 4) $time*1s $delay*1s $method, nth($props, 6) $time*1s $delay*1s $method

@@ -5,8 +5,9 @@ module.exports = function() {
             'app/js/common.js'
             ])
         .pipe($.gp.plumber({errorHandler: $.gp.notify.onError("Error: <%= error.message %>")}))
+        .pipe($.gp.browserify({ debug: true }))
         .pipe($.gp.concat('common.min.js'))
-        .pipe($.gulp.dest('./app/js/'));
+        .pipe($.gulp.dest('./dist/js/'));
     });
 
     $.gulp.task('scripts:app', () => {

@@ -1,4 +1,5 @@
 include _common/_mixins
+block variables
 
 doctype html
 html(lang="ru-RU")
@@ -27,7 +28,7 @@ html(lang="ru-RU")
 		<![endif]-->
 
 		style(type='text/css') body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }
-	body
+	body(class= pageClass)
 		.wrapper
 			include _common/_header
 			block content

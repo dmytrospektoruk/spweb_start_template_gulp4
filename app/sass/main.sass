@@ -1,6 +1,5 @@
 @import "fonts"
 @import "libs"
-@import "_mixins/mixins"
 @import "vars"
 
 *::-webkit-input-placeholder
@@ -19,6 +18,9 @@
 	color: #666
 	opacity: 1
 
+::selection
+	background-color: $accent
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #666
@@ -26,7 +28,7 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-html, body
+html
 	height: 100%
 
 html
@@ -36,14 +38,42 @@ html
 	box-sizing: inherit
 
 body
-	font-size: 16px
+	font-size: rem(16)
 	min-width: 320px
 	position: relative
-	line-height: 1.6
+	line-height: rem(26)
 	font-family: $default-font
+	color: $text
 	overflow-x: hidden
 	opacity: 1
 
+input,
+textarea
+	font-family: inherit
+	font-weight: 100
+	outline: none
 
+.container
+	padding: 0 10px
+
+.container--fluid
+	padding: 0
+
+
+// .preloader
+// 	height: 100vh
+// 	width: 100%
+// 	text-align: center
+// 	background: #6A9659 url('img/general/preloader.jpg')
+
+@import "header"
+@import "footer"
+@import "nav"
+
+
+
+
+
+@import "pages/index"
 
 @import "media"
