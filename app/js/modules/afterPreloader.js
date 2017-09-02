@@ -1,7 +1,7 @@
 'use strict'
 
-var module = require('./module.js');
+var animated = require('./animated.js');
 
 module.exports = function() {
-	module();
+	animated();
 }

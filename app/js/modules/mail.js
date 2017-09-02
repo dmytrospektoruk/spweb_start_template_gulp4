@@ -8,13 +8,14 @@ module.exports = function() {
 		name = form.find('input[name=name]'),
 		email = form.find('input[name=email]'),
 		request = form.find('textarea[name=request]'),
-		success = $('.form__success'),
+		result = $('.form__result'),
 		nameError = name.siblings('.form__error'),
 		emailError = email.siblings('.form__error'),
 		requestError = request.siblings('.form__error'),
 		emptyText = 'Это поле обязательно для заполнения',
 		wrongEmail = 'Вы ввели некорректный e-mail',
-		successText = 'Ваше сообщение было успешно отправленно! Мы свяжемся с Вами в ближайшее время.';
+		sentSuccess = 'Ваше сообщение было успешно отправленно! Мы свяжемся с Вами в ближайшее время.',
+		sentError = 'Ваше сообщение не было отправленно!';
 
 		$('#contact_me').on('click', onSubmit);
 		$('#reset_form').on('click', reset);
@@ -100,18 +101,38 @@ module.exports = function() {
 				type: "POST",
 				url: "/php/mail.php",
 				data: form.serialize()
-			}).done(function() {
-				success.css('display', 'block').animate({
-					'opacity' : '1'
-				}, 600).html(successText);
-				setTimeout(function() {
-					form.trigger("reset");
-					success.animate({
-						'opacity' : '0'
-					}, 600, function() {
-						success.css('display', 'none')
-					});
-				}, 5000);
+			}).done(function(data) {
+				if ( data.indexOf('Message has been sent') > -1 ) {
+					result.css({
+						'display' : 'block',
+						'color' : '#4e8839'
+					}).animate({
+						'opacity' : '1'
+					}, 600).html(sentSuccess);
+					setTimeout(function() {
+						form.trigger("reset");
+						result.animate({
+							'opacity' : '0'
+						}, 600, function() {
+							result.css('display', 'none')
+						});
+					}, 5000);
+				} else {
+					result.css({
+						'display' : 'block',
+						'color' : 'rgba(255, 0, 0, 0.7)'
+					}).animate({
+						'opacity' : '1'
+					}, 600).html(sentError);
+					setTimeout(function() {
+						form.trigger("reset");
+						result.animate({
+							'opacity' : '0'
+						}, 600, function() {
+							result.css('display', 'none')
+						});
+					}, 5000);
+				}				
 
 			});
 			return false;
