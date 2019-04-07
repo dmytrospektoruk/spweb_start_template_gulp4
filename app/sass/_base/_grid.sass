@@ -1,0 +1,18 @@
+//* --------------------------------
+//Grid styles
+//-------------------------------- */
+.container
+	@extend %container
+	@extend %clearfix
+
+
+%container
+	@extend %container
+
+
+%row
+	@include grid-row()
+
+
+%row-item
+	@include grid-item()

@@ -1,5 +1,54 @@
-@import "_mixins/mixins"
+// 1px in EM
+$dp: 1 / 16 !default
 
-$default-font: "roboto-example", sans-serif
+
+// base fonts
+$font-family-primary: "roboto-example", sans-serif
+$font-family-secondary: "roboto-example", sans-serif
+
+
+// theme colors
 $accent: orange
-$text: #333
+
+
+// base colors
+$text-color-primary: #262f38 !default
+$text-color-secondary: #818991 !default
+$text-color-blog: #535f6a !default
+
+
+// links
+$link-color: #068cfe !default // $color-primary
+$link-color-hover: lighten($link-color, 8%) !default // darken($color-primary, 10%)
+$link-decoration: none !default
+$link-hover-decoration: none !default
+
+
+// headings
+$headings-font-family: $font-family-primary !default
+$headings-font-weight: 700 !default
+$headings-line-height: 1.2 !default
+$headings-color: $text-color-primary !default
+$headings-sub-color: $text-color-secondary !default
+
+$font-size-h1: 1.875em !default
+$font-size-h2: 1.5em !default
+$font-size-h3: 1.25em !default
+$font-size-h4: 1.125em !default
+$font-size-h5: 1em !default
+$font-size-h6: .875em !default
+
+
+// components
+$divider-line-color: #dddddd !default
+$divider-line-height: 1px !default
+$divider-margin-y: 1px !default
+
+
+// container / grid
+$container-gutter: 1em !default
+$container-max-width: 75em !default // 1200px
+
+$box-sm-max-width: 570px
+$box-md-max-width: 768px
+$box-lg-max-width: 920px

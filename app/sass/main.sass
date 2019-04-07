@@ -1,7 +1,9 @@
+@import "vars"
+@import "_mixins/mixins"
 @import "fonts"
 @import "libs"
-@import "vars"
 @import "animations"
+@import "_base/base"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -43,8 +45,8 @@ body
 	min-width: 320px
 	position: relative
 	line-height: rem(26)
-	font-family: $default-font
-	color: $text
+	font-family: $font-family-secondary
+	color: $text-color-secondary
 	overflow-x: hidden
 	opacity: 1
 
@@ -67,14 +69,6 @@ textarea
 // 	text-align: center
 // 	background: #6A9659 url('img/general/preloader.jpg')
 
-@import "header"
-@import "footer"
-@import "nav"
-
-
-
-
+@import "_components/components"
 
 @import "pages/index"
-
-@import "media"

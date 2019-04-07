@@ -1,0 +1,11 @@
+// list unstyle set
+@mixin list-unstyled($margin: 0) 
+	padding-left: 0
+	list-style: none
+	margin: $margin
+
+
+@mixin list-inline-item($margin-right: 8px) 
+	display: inline-block
+	&:not(:last-child) 
+		margin-right: $margin-right

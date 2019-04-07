@@ -1,0 +1,20 @@
+@mixin hover
+	.no-touchevents &:hover
+		@content
+
+@mixin hover-focus
+	&:focus,
+	.no-touchevents &:hover
+		@content
+
+@mixin plain-hover-focus
+	&,
+	&:focus,
+	.no-touchevents &:hover
+		@content
+
+@mixin hover-focus-active
+	&:focus,
+	&:active,
+	.no-touchevents &:hover
+		@content

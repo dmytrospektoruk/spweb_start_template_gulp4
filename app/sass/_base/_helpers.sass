@@ -1,0 +1,42 @@
+/* --------------------------------
+Helpers styles
+//-------------------------------- */
+// images
+%img-responsive 
+	@include img-responsive
+
+// blocks
+%inline-block 
+	@include inline-block()
+%center-block 
+	@include center-block()
+
+%container 
+	@include container()
+
+// list unstyled
+%list-inline,
+%list-unstyled 
+	@include list-unstyled($margin: 0)
+%list-inline-item 
+	@include list-inline-item($margin-right: 8px)
+
+// clearfix
+%clearfix 
+	@include clearfix();
+%before-content 
+	content: ''
+	pointer-events: none
+
+// text rendering
+%text-rendering-opt 
+	text-rendering: optimizeSpeed
+%text-rendering-auto 
+	text-rendering: auto
+%font-family-secondary 
+	font-family: $font-family-secondary
+
+.clearfix 
+	@extend %clearfix
+.hidden 
+	display: none
