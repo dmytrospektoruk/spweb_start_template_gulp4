@@ -1,0 +1,240 @@
+/* --------------------------------
+Typography styles
+//-------------------------------- */
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea
+	font-family: inherit
+	font-size: inherit
+	line-height: inherit
+
+[role=button],
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea
+	touch-action: manipulation
+
+// Figures
+figure
+	margin: 0
+
+// Images
+img
+	vertical-align: middle
+
+
+dl,
+ol,
+pre,
+ul
+	margin-top: 0
+	margin-bottom: 1.6rem
+
+address,
+dl,
+ol,
+pre,
+ul
+	margin-bottom: 1.6rem
+
+caption,
+th
+	text-align: left
+
+dd,
+label,
+legend
+	margin-bottom: 1rem
+
+address,
+legend
+	line-height: inherit
+
+label,
+output
+	display: inline-block
+
+abbr[data-original-title],
+abbr[title]
+	cursor: help
+	border-bottom: 1px dotted #818a91
+
+address
+	font-style: normal
+
+ol ol,
+ol ul,
+ul ol,
+ul ul
+	margin-bottom: 0
+
+dt
+	font-weight: 700
+
+dd
+	margin-left: 0
+
+blockquote
+	margin: 0 0 1.6rem
+
+figure
+	margin: 0
+
+pre
+	overflow: auto
+
+table
+	border-collapse: collapse
+	background-color: transparent
+
+caption
+	padding-top: 1.2rem
+	padding-bottom: 1.2rem
+	color:#818a91
+	caption-side: bottom
+
+
+small
+	font-size: 80%
+	font-weight: 400
+
+mark
+	padding: .2em
+	background-color: #fcf8e3
+
+
+.initialism
+	font-size: 90%
+	text-transform: uppercase
+
+// iOS "clickable elements" fix for role="button"
+[role="button"] 
+	cursor: pointer
+[hidden]
+	display: none!important
+[tabindex="-1"]:focus
+	outline: 0 none!important
+
+
+// Links
+a
+	color: $link-color
+	text-decoration: $link-decoration
+	transition: all .3s ease 0s
+	@include hover-focus
+		color: $link-color-hover
+		text-decoration: $link-hover-decoration
+
+	&:not([href])
+		color: inherit
+		text-decoration: none
+		@include hover-focus
+			color: inherit
+			text-decoration: none
+			outline: 0
+	&[href^='tel'],
+	&[href^='mailto']
+		//@extend %text-link
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	color: $text-color-primary
+	margin: 2.5em 0 0.75em
+	font:
+		family: $headings-font-family
+
+	&:first-child
+		margin-top: 0
+
+	a
+		font-weight: inherit
+		color: inherit
+		transition: color .3s
+
+h1
+	@extend %heading-h1
+
+h2
+	@extend %heading-h2
+
+h3
+	@extend %heading-h3
+
+h4
+	@extend %heading-h4
+
+h5
+	@extend %heading-h5
+
+h6
+	@extend %heading-h6
+
+p
+	@extend %color-text-secondary
+	margin-top: 0
+	margin-bottom: 1.3em
+
+dl
+	//@extend %color-text-secondary;
+
+
+small,
+.font_small
+	font-size: 0.75em
+
+
+// Horizontal rules
+hr
+	@extend %divider
+
+
+.text-entry
+	font-size: 1.125rem
+	line-height: 1.78
+
+.text-content
+	p
+		@extend %paragraph-style
+
+
+%list-style-1
+	@extend %list-unstyled
+	color: $text-color-blog
+
+	li
+		position: relative
+		font-size: 1.125rem
+		line-height: 1.22
+		padding-left: 1.25rem
+
+		&::before
+			@extend %before-content
+			width: 4px
+			height: 4px
+			border-radius: 50%
+			background-color: #d8d8d8
+			position: absolute
+			top: 9px
+			left: 0
+
+	li + li
+		margin-top: 1rem
+
+.text-entry
+	ul 
+		@extend %list-style-1
+
+	ul + p
+		margin-top: 1.3em

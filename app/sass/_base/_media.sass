@@ -1,0 +1,124 @@
+/* --------------------------------
+Breakpoints
+//-------------------------------- */
+// minWidth
+$XXS:	22.5em // 360px
+$XS:	30em // 480px
+$SM:	40em // 640px
+$MD:	48em // 768px
+$LG:	64em // 1024px
+$XL:	75em // 1200px
+
+// maxWidth
+$DEF_MAX: 	$XXS - $dp
+$XXS_MAX:	$XS - $dp
+$XS_MAX:	$SM - $dp
+$SM_MAX:	$MD - $dp
+$MD_MAX:	$LG - $dp
+$LG_MAX:	$XL - $dp
+
+// between min/max Width
+//SM_ONLY
+//MD_ONLY
+//LG_ONLY
+
+// minHeight
+$XS_H: $XS
+$SM_H: $SM
+$MD_H: $MD
+$LG_H: $LG
+
+// media queries
+@mixin MQ($canvas)
+	// min-width
+	@if $canvas == XXS
+		@media only screen and (min-width: $XXS) 
+			@content
+
+	@else if $canvas == XS
+		@media only screen and (min-width: $XS)
+			@content
+
+	@else if $canvas == SM
+		@media only screen and (min-width: $SM)
+			@content
+
+	@else if $canvas == MD
+		@media only screen and (min-width: $MD)
+			@content
+
+	@else if $canvas == LG
+		@media only screen and (min-width: $LG)
+			@content
+
+	@else if $canvas == XL
+		@media only screen and (min-width: $XL)
+			@content
+
+
+	// max-width
+	@else if $canvas == DEF_MAX
+		@media only screen and (max-width: $DEF_MAX)
+			@content
+
+	@else if $canvas == XXS_MAX
+		@media only screen and (max-width: $XXS_MAX)
+			@content
+
+	@else if $canvas == XS_MAX
+		@media only screen and (max-width: $XS_MAX)
+			@content
+
+	@else if $canvas == SM_MAX
+		@media only screen and (max-width: $SM_MAX)
+			@content
+
+	@else if $canvas == MD_MAX
+		@media only screen and (max-width: $MD_MAX)
+			@content
+
+	@else if $canvas == LG_MAX
+		@media only screen and (max-width: $LG_MAX)
+			@content
+
+	// between minWidth and maxWidth
+	@else if $canvas == XXS_ONLY
+		@media screen and (min-width: $XXS) and (max-width: $XXS_MAX)
+			@content
+
+	@else if $canvas == XS_ONLY
+		@media screen and (min-width: $XS) and (max-width: $XS_MAX)
+			@content
+
+	@else if $canvas == SM_ONLY
+		@media screen and (min-width: $SM) and (max-width: $SM_MAX)
+			@content
+
+	@else if $canvas == MD_ONLY
+		@media screen and (min-width: $MD) and (max-width: $MD_MAX)
+			@content
+
+	@else if $canvas == LG_ONLY
+		@media screen and (min-width: $LG) and (max-width: $LG_MAX)
+			@content
+
+	@else if $canvas == SM_LG_ONLY
+		@media screen and (min-width: $SM) and (max-width: $MD_MAX)
+			@content
+
+	// min-height
+	@else if $canvas == XS_H
+		@media only screen and (min-height: $XS_H)
+			@content
+
+	@else if $canvas == SM_H
+		@media only screen and (min-height: $SM_H)
+			@content
+
+	@else if $canvas == MD_H
+		@media only screen and (min-height: $MD_H)
+			@content
+
+	@else if $canvas == LG_H
+		@media only screen and (min-height: $LG_H)
+			@content

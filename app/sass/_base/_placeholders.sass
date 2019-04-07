@@ -1,0 +1,193 @@
+//links
+
+// shadow box
+// %shadow-box 
+	// @include box-shadow()
+
+
+
+// text box 920px
+%text-box-lg 
+	@extend %center-block
+	max-width: $box-lg-max-width
+
+.text-box-lg 
+	@extend %text-box-lg
+	//@extend %row-item
+
+
+// text box 768px
+%text-box-md 
+	@extend %center-block
+	max-width: $box-md-max-width
+
+.text-box-md 
+	@extend %text-box-md
+	//@extend %row-item
+
+
+// text box 570px
+%text-box-sm 
+	@extend %center-block
+	max-width: $box-sm-max-width
+
+.text-box-sm 
+	@extend %text-box-sm
+	//@extend %row-item
+
+
+
+// divider
+%divider 
+	@include divider()
+
+
+
+// headings
+%heading-h1 
+	font-size: 1.875em
+	line-height: 1.33
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 3.75em
+		line-height: 1.17
+	
+
+%heading-h2 
+	font-size: 1.875em
+	line-height: 1.6
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 3em
+		line-height: 1.17
+	
+
+%heading-h3 
+	font-size: 1.5em
+	line-height: 1.42
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 2em
+		line-height: 1.31
+
+
+%heading-h4 
+	font-size: 1.375em
+	line-height: 1.36
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 1.5em
+		line-height: 1.42
+
+
+%heading-h5 
+	font-size: 1.125em
+	line-height: 1.56
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 1.375em
+		line-height: 1.45
+
+
+%heading-h6 
+	@extend %text-bold
+	@extend %text-uppercase
+	font-size: .75em
+	line-height: 1.33
+	letter-spacing: 1.4px
+
+
+%item-title 
+	font-size: 1.125em
+	line-height: 1.56
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 1.375em
+		line-height: 1.45
+
+
+%section-title
+	font-size: 1.75em
+	line-height: 1.36
+	@extend %text-bold
+
+	@include MQ(SM) 
+		font-size: 2.625em
+		line-height: 1.24
+
+
+%sub-title 
+	font-size: 1.25em
+	line-height: 1.5
+
+	@include MQ(SM) 
+		font-size: 1.5em
+		line-height: 1.42
+
+
+
+// text-style
+%text-uppercase 
+	text-transform: uppercase
+
+
+%text-bold 
+	font-weight: 700
+
+
+%text-center 
+	text-align: center
+
+
+%paragraph-style 
+	font-size: 1.125em
+
+	&:last-child 
+		margin-bottom: 0
+
+
+%text-truncate
+	@include text-overflow()
+
+
+
+// margin
+%margin-0 
+	margin: 0
+
+%margin-bottom-0 
+	margin-bottom: 0
+
+
+// colors
+%color-text-primary 
+	color: $text-color-primary
+
+%color-text-secondary 
+	color: $text-color-secondary
+
+%color-text-blog 
+	color: $text-color-blog
+
+
+// layout
+%flex-row
+	display: flex
+	flex-wrap: wrap
+
+%flex-column
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+
+%flex-justify-between
+	justify-content: space-between
+
+%flex-align-center
+	align-items: center
