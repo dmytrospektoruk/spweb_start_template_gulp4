@@ -12,7 +12,7 @@
     "browser-sync": "^2.26.3",
     "del": "^4.1.0",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-browserify": "^0.5.1",
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
@@ -32,7 +32,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "normalize-scss": "^7.0.1",
     "svg4everybody": "^2.1.9",
     "waypoints": "^4.0.1"
