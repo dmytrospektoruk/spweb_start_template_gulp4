@@ -2,41 +2,66 @@
 Helpers styles
 //-------------------------------- */
 // images
-%img-responsive 
+%img-responsive
 	@include img-responsive
 
 // blocks
-%inline-block 
+%inline-block
 	@include inline-block()
-%center-block 
+%center-block
 	@include center-block()
 
-%container 
+%container
 	@include container()
 
 // list unstyled
 %list-inline,
-%list-unstyled 
+%list-unstyled
 	@include list-unstyled($margin: 0)
-%list-inline-item 
+%list-inline-item
 	@include list-inline-item($margin-right: 8px)
 
 // clearfix
-%clearfix 
-	@include clearfix();
-%before-content 
+%clearfix
+	@include clearfix()
+%before-content
 	content: ''
 	pointer-events: none
 
 // text rendering
-%text-rendering-opt 
+%text-rendering-opt
 	text-rendering: optimizeSpeed
-%text-rendering-auto 
+%text-rendering-auto
 	text-rendering: auto
-%font-family-secondary 
+%font-family-secondary
 	font-family: $font-family-secondary
 
-.clearfix 
+.clearfix
 	@extend %clearfix
-.hidden 
+.hidden
 	display: none
+
+%scrollbar
+	&::-webkit-scrollbar
+		width: 3px
+		background-color: rgba( #ebecf0, 0 )
+		border-radius: 3px
+		opacity: 0
+		&-track
+			background-color: rgba( #ebecf0, 0 )
+			border-radius: 3px
+			+trans(all, .3, 0, ease)
+		&-thumb
+			background-color: rgba(40, 45, 58, 0)
+			border-radius: 3px
+			+trans(all, .3, 0, ease)
+	&:hover
+		&::-webkit-scrollbar
+			&-track
+				background-color: rgba( #ebecf0, 1 )
+			&-thumb
+				background-color: rgba(40, 45, 58, 0.5)
+
+%scroll-touch
+	overflow-y: scroll
+	-webkit-overflow-scrolling: touch
